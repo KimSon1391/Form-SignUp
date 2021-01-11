@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./fontawesome-free-5.15.1-web/css/all.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="form">
+      <div class="form-content">
+        <h1 class="form__heading">Sign Up</h1>
+        <h2 class="form__caption">Sign up with</h2>
+        <div class="form-social">
+          <div class="form-social__group">
+            <i class="fab fa-google form-social__icons"></i>
+            <span class="form-social__txt">Sign up with Google</span>
+          </div>
+          <div class="form-social__group">
+            <i class="fab fa-facebook form-social__icons"></i>
+            <span class="form-social__txt">Sign up with Facebook</span>
+          </div>
+        </div>
+        <form class="form-signup" id="form1" autocomplete="off">
+          <div class="form-signup__row">
+            <div class="form-signup__group">
+              <label class="form-signup__label" for="name">Name</label>
+              <input
+                class="form-signup__input"
+                type="text"
+                id="name"
+                placeholder="Name"
+              />
+              <span class="form-signup__message"></span>
+            </div>
+            <div class="form-signup__group">
+              <label class="form-signup__label" for="email">Email</label>
+              <input
+                class="form-signup__input"
+                type="text"
+                id="email"
+                placeholder="Email"
+              />
+              <span class="form-signup__message"></span>
+            </div>
+          </div>
+          <div class="form-signup__group">
+            <label class="form-signup__label" for="password">Password</label>
+            <input
+              class="form-signup__input"
+              type="password"
+              id="password"
+              placeholder="Password"
+            />
+            <span class="form-signup__message"></span>
+          </div>
+          <div class="form-signup__term">
+            <input type="checkbox" id="checkbox" />
+            <label for="checkbox"
+              >I've read and agree with Term of Service and our Privacy
+              Policy</label
+            >
+          </div>
+          <button class="form-button" type="submit" id="button">
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </form>
+        <p class="form-desc">
+          Already have an account? <a href="#">Sign in</a>
+        </p>
+      </div>
+      <div class="form-image">
+        <img src="./photo/rocket.jpg" alt="" />
+      </div>
+    </div>
+
+    <script src="./validator.js"></script>
+    <script>
+      Validator({
+        form: "#form1",
+        errorSelector: ".form-signup__message",
+        rules: [
+          Validator.isRequired("#name"),
+          Validator.isRequired("#email"),
+          Validator.isRequired("#password"),
+          Validator.isEmail("#email"),
+        ],
+      });
+    </script>
+  </body>
+</html>
